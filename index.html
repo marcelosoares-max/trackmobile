@@ -770,6 +770,112 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 
 @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.5s ease forwards; }
+
+/* ─── MOBILE RESPONSIVO ─── */
+@media (max-width: 768px) {
+
+  /* Seções gerais */
+  section, .section { padding-left: 1rem !important; padding-right: 1rem !important; }
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; }
+
+  /* Tabs de navegação */
+  .tabs-nav { gap: 4px !important; padding: 0 0.5rem !important; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap !important; }
+  .tab-btn { font-size: 0.7rem !important; padding: 6px 8px !important; white-space: nowrap; }
+
+  /* Hero */
+  .hero { padding: 3rem 1rem 2rem !important; }
+  .hero h1 { font-size: 1.8rem !important; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+
+  /* Grids inline — cobertura geral via classes auxiliares */
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns:1.4fr 1fr"],
+  [style*="grid-template-columns:1fr 340px"],
+  [style*="grid-template-columns:340px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Tabela WhatsApp — 3 colunas de preço */
+  [style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Tabela de SLA (140px + colunas) */
+  [style*="grid-template-columns:140px 1fr 1fr 1fr"],
+  [style*="grid-template-columns:140px 1fr 40px"] {
+    grid-template-columns: 1fr !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Tabela Blip Desk (1fr 50px 50px 60px) */
+  [style*="grid-template-columns:1fr 50px 50px 60px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Painel Blip Desk 4 colunas de métricas */
+  [style*="grid-template-columns:1fr 1fr 1fr 1fr"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Bloco split do Blip Desk (conversa + lista) */
+  [style*="grid-template-columns:1.4fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ocultar painel Blip Desk em mobile (é um mockup desktop) */
+  #blip-desk .blip-desk-mockup { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Seção de investimento — cards de volume/implementação */
+  .invest-info-grid { grid-template-columns: 1fr !important; }
+
+  /* Preço WhatsApp — duas colunas (plataforma + Meta) */
+  [style*="grid-template-columns:1fr 1fr"][style*="gap:1.5rem"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Pain cards */
+  .pain-grid { grid-template-columns: 1fr !important; }
+
+  /* Tipografia geral */
+  h2, .section-title { font-size: 1.5rem !important; }
+  h3 { font-size: 1.1rem !important; }
+
+  /* CTA */
+  .cta-title { font-size: 1.6rem !important; }
+  .cta-btns { flex-direction: column !important; align-items: center !important; }
+
+  /* Footer logos */
+  .footer-logos { gap: 1rem !important; font-size: 0.9rem !important; }
+
+  /* Mockup WhatsApp — garantir que não vaze */
+  .wa-phone, .wa-screen { max-width: 100% !important; width: 100% !important; }
+
+  /* Scroll horizontal seguro em tabelas densas */
+  .overflow-x-mobile { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.5rem !important; }
+  .hero-stats { grid-template-columns: 1fr 1fr !important; }
+  .tab-btn { font-size: 0.65rem !important; padding: 5px 6px !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr 1fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; }
+}
 </style>
 </head>
 <body>
@@ -1969,7 +2075,8 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
   </div>
 
   <!-- Dashboard visual simulado -->
-  <div style="max-width:1100px;margin:0 auto 0;background:#06111D;border:1px solid rgba(255,255,255,0.07);border-radius:24px 24px 0 0;overflow:hidden;box-shadow:0 -8px 60px rgba(0,0,0,0.5);">
+  <div style="max-width:1100px;margin:0 auto 0;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+  <div style="min-width:680px;background:#06111D;border:1px solid rgba(255,255,255,0.07);border-radius:24px 24px 0 0;overflow:hidden;box-shadow:0 -8px 60px rgba(0,0,0,0.5);">
 
     <!-- Topo do painel simulado -->
     <div style="background:#0A1929;border-bottom:1px solid rgba(255,255,255,0.06);padding:12px 20px;display:flex;align-items:center;gap:12px;">
@@ -2139,6 +2246,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 
     </div>
   </div>
+  </div><!-- /dashboard scroll wrapper -->
 
 </section>
 
@@ -2233,7 +2341,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
       </div>
 
       <!-- Dois blocos de info -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
         <div style="background:rgba(28,200,238,0.06);border:1px solid rgba(28,200,238,0.15);border-radius:12px;padding:1rem;">
           <div style="font-size:0.75rem;font-weight:700;color:var(--blip-primary);margin-bottom:0.5rem;">⚙️ Por trás disso:</div>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:5px;">
@@ -2265,7 +2373,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
       <h3 style="font-size:1.4rem;font-weight:800;">Definição das fases</h3>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
 
       <!-- Fase 1 -->
       <div style="background:linear-gradient(135deg,rgba(28,200,238,0.12),rgba(28,200,238,0.04));border:1px solid rgba(28,200,238,0.35);border-radius:20px;padding:2rem;display:flex;flex-direction:column;gap:1rem;">
@@ -2351,7 +2459,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
     </div>
 
     <!-- Informações adicionais -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem;">
       <div style="background:var(--card);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;">
         <div style="font-size:1.5rem;">📦</div>
         <div>
@@ -2369,7 +2477,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
     </div>
 
     <!-- 3 pilares -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem;">
 
       <div style="background:var(--card);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:0.75rem;align-items:center;text-align:center;">
         <div style="font-size:2rem;">💬</div>
@@ -2413,12 +2521,12 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         <div style="font-size:0.7rem;color:var(--text-muted);">Valores sujeitos a alteração conforme precificação Meta</div>
       </div>
 
-      <div style="padding:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div style="padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
 
         <!-- Plataforma Blip -->
         <div>
           <div style="font-size:0.75rem;font-weight:700;color:var(--blip-primary);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Plataforma Blip</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:0.75rem;">
             <div style="background:#0D2137;border-radius:12px;padding:1rem;text-align:center;">
               <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:6px;">Colaborador<br>busca o bot</div>
               <div style="font-size:1.4rem;font-weight:800;color:var(--blip-primary);">R$1,50</div>
@@ -2479,7 +2587,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 
       <!-- Janela de atendimento -->
       <div style="padding:0 1.5rem 1.5rem;">
-        <div style="background:rgba(37,211,102,0.07);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:1rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div style="background:rgba(37,211,102,0.07);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:1rem 1.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
           <div>
             <div style="font-size:0.75rem;font-weight:700;color:#25D366;margin-bottom:0.4rem;">⏱ Janela de 24h</div>
             <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.6;">A partir do momento que o colaborador inicia a conversa, a empresa pode responder por mensagens de serviço ou utilidade <strong style="color:var(--text-light)">sem custo adicional</strong> por 24h.</div>
@@ -2513,7 +2621,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
   <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;">
 
     <!-- Disponibilidade + monitoramento -->
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.25rem;align-items:stretch;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;align-items:stretch;">
 
       <!-- Uptime card destaque -->
       <div style="background:linear-gradient(135deg,rgba(52,211,153,0.12),rgba(28,200,238,0.06));border:1px solid rgba(52,211,153,0.35);border-radius:20px;padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;">
@@ -2526,7 +2634,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
       <!-- 4 pilares de responsabilidade -->
       <div style="background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
         <div style="font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem;">O que a Blip garante:</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;">
           <div style="display:flex;align-items:flex-start;gap:10px;">
             <div style="width:32px;height:32px;border-radius:8px;background:rgba(28,200,238,0.1);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;">📡</div>
             <div>
@@ -2571,7 +2679,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
       <div style="padding:1.5rem;">
 
         <!-- Cabeçalho tabela -->
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:1rem;font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><div style="min-width:420px;"><div style="display:grid;grid-template-columns:minmax(100px,140px) 1fr 1fr 1fr;gap:0.5rem;font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.06);">
           <div>Prioridade</div>
           <div style="text-align:center;">1ª Resposta</div>
           <div style="text-align:center;">Recuperação</div>
@@ -2579,7 +2687,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         </div>
 
         <!-- Crítico -->
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:1rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <div style="display:grid;grid-template-columns:minmax(100px,140px) 1fr 1fr 1fr;gap:0.5rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;box-shadow:0 0 6px #ef4444;"></div>
             <span style="font-size:0.82rem;font-weight:700;color:#ef4444;">Crítico</span>
@@ -2594,7 +2702,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         </div>
 
         <!-- Alto -->
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:1rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <div style="display:grid;grid-template-columns:minmax(100px,140px) 1fr 1fr 1fr;gap:0.5rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:8px;height:8px;border-radius:50%;background:#f97316;flex-shrink:0;box-shadow:0 0 6px #f97316;"></div>
             <span style="font-size:0.82rem;font-weight:700;color:#f97316;">Alto</span>
@@ -2609,7 +2717,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         </div>
 
         <!-- Médio -->
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:1rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <div style="display:grid;grid-template-columns:minmax(100px,140px) 1fr 1fr 1fr;gap:0.5rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:8px;height:8px;border-radius:50%;background:#FBBF24;flex-shrink:0;box-shadow:0 0 6px #FBBF24;"></div>
             <span style="font-size:0.82rem;font-weight:700;color:#FBBF24;">Médio</span>
@@ -2624,7 +2732,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         </div>
 
         <!-- Baixo -->
-        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:1rem;align-items:center;padding:0.75rem 0;">
+        <div style="display:grid;grid-template-columns:minmax(100px,140px) 1fr 1fr 1fr;gap:0.5rem;align-items:center;padding:0.75rem 0;">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:8px;height:8px;border-radius:50%;background:#34D399;flex-shrink:0;box-shadow:0 0 6px #34D399;"></div>
             <span style="font-size:0.82rem;font-weight:700;color:#34D399;">Baixo</span>
@@ -2638,11 +2746,11 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
           <div style="font-size:0.72rem;color:var(--text-muted);">Incidente pontual sem impacto generalizado</div>
         </div>
 
-      </div>
+      </div></div></div><!-- /sla-table scroll wrapper -->
     </div>
 
     <!-- Suporte técnico + Matriz de prioridade lado a lado -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
 
       <!-- Suporte técnico -->
       <div style="background:var(--card);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
