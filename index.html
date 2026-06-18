@@ -664,32 +664,6 @@ body {
 .pain-title { font-size: 0.88rem; font-weight: 700; color: var(--text-light); margin-bottom: 0.4rem; }
 .pain-text { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
 
-.metric-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 3rem;
-}
-.metric-card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 1.25rem 1rem;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.metric-card:hover { border-color: rgba(28,200,238,0.3); transform: translateY(-2px); }
-.metric-icon { font-size: 1.5rem; margin-bottom: 6px; }
-.metric-val {
-  font-family: 'Space Mono', monospace;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--blip-primary);
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-.metric-label { font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; }
-
 /* ─── OVERVIEW GRID ─── */
 .overview-section {
   padding: 4rem 2rem;
@@ -960,32 +934,131 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         <div class="pain-text">7 pessoas × 2h diárias atendendo dúvidas que poderiam ser resolvidas automaticamente com IA — são <b>14h por dia</b> de esforço operacional recuperável.</div>
       </div>
     </div>
-
-    <div class="metric-strip">
-      <div class="metric-card">
-        <div class="metric-icon">📲</div>
-        <div class="metric-val">Canal Principal</div>
-        <div class="metric-label">WhatsApp como canal central, integrado a canais secundários como e-mail</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-icon">🤖</div>
-        <div class="metric-val">SLA mensurável</div>
-        <div class="metric-label">Dados reais de volume e tempo de resolução em tempo real</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-icon">⚡</div>
-        <div class="metric-val">↓ Transbordo</div>
-        <div class="metric-label">Resolução automática das dúvidas mais frequentes</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-icon">🔗</div>
-        <div class="metric-val">Integrado</div>
-        <div class="metric-label">Multi-agents conectados ao sistema de ponto e RH</div>
-      </div>
-    </div>
   </div>
 </section>
 
+<!-- ════════════════ BENEFÍCIOS PARA A OPERAÇÃO ════════════════ -->
+<style>
+.benefits-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #0A1520 0%, #061018 100%);
+  overflow: hidden;
+}
+.benefits-inner { max-width: 1180px; margin: 0 auto; }
+.benefits-header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+@media (max-width: 900px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefits-section { padding: 3.5rem 1rem; }
+}
+.benefit-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(28,200,238,0.12);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(28,200,238,0.3);
+  background: rgba(28,200,238,0.04);
+}
+.benefit-card__icon {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  background: rgba(28,200,238,0.12);
+}
+.benefit-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.benefit-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.benefit-card__before {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(248,113,113,0.85);
+}
+</style>
+<section class="benefits-section">
+  <div class="benefits-inner">
+
+    <div class="benefits-header">
+      <div class="section-label">O que a T&amp;F ganha</div>
+      <h2 class="section-title">Benefícios diretos para a operação</h2>
+      <p class="section-desc">Cada dor mapeada no diagnóstico se transforma em ganho concreto para o time de People — do atendimento ao colaborador até a gestão da operação.</p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">⚡</div>
+        <div class="benefit-card__title">Eficiência operacional</div>
+        <div class="benefit-card__desc">As dúvidas rotineiras passam a ser resolvidas automaticamente pela Iara, liberando o time de People do esforço repetitivo e concentrando as pessoas no que realmente exige julgamento humano.</div>
+        <div class="benefit-card__before">↳ hoje: 7 pessoas × 2h/dia em dúvidas recorrentes</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">📉</div>
+        <div class="benefit-card__title">Redução de transbordo</div>
+        <div class="benefit-card__desc">Com um agente sempre disponível no WhatsApp, os picos de chamados em dias de pagamento e fechamento de ponto deixam de sobrecarregar o time — a Iara absorve a demanda concentrada sem fila.</div>
+        <div class="benefit-card__before">↳ hoje: até 100 chamados em dias de pico</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">🗂️</div>
+        <div class="benefit-card__title">Canal único e centralizado</div>
+        <div class="benefit-card__desc">Em vez de Portal, Google Chat, e-mail, WhatsApp e atendimento presencial cada um com seu próprio histórico, tudo passa a fluir por um único canal — com contexto preservado entre conversas.</div>
+        <div class="benefit-card__before">↳ hoje: 5 canais sem unificação</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">📊</div>
+        <div class="benefit-card__title">SLA finalmente mensurável</div>
+        <div class="benefit-card__desc">Cada interação é registrada e classificada, dando ao time de People dados reais de volume e tempo de resolução — a base que faltava para enxergar gargalos e provar resultado.</div>
+        <div class="benefit-card__before">↳ hoje: impossível medir com precisão</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">🎯</div>
+        <div class="benefit-card__title">Conversas mais objetivas</div>
+        <div class="benefit-card__desc">Fluxos guiados substituem o vai-e-vem de mensagens sem padrão, reduzindo o número de trocas necessárias para resolver uma única dúvida — menos ruído, mais resolução na primeira interação.</div>
+        <div class="benefit-card__before">↳ hoje: 300 chamados geram 1.200 interações</div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-card__icon">🌐</div>
+        <div class="benefit-card__title">Alcance para todo o time</div>
+        <div class="benefit-card__desc">Diferente do Portal, que não chega a todos os colaboradores, o WhatsApp já está no bolso de cada pessoa da loja ao escritório — eliminando o desvio para canais informais e sem rastreio.</div>
+        <div class="benefit-card__before">↳ hoje: acesso restrito ao Portal</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
 <!-- ════════════════ SOBRE A BLIP ════════════════ -->
 <style>
 /* Blip privacy strip: stack on mobile */
@@ -1274,12 +1347,10 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
   grid-template-columns: repeat(4, 1fr);
   gap: 1.1rem;
 }
-.diff-grid > .diff-card:nth-child(1) { grid-column: span 2; }
-.diff-grid > .diff-card:nth-child(2) { grid-column: span 2; }
+.diff-grid > .diff-card--featured { grid-column: span 2; }
 @media (max-width: 980px) {
   .diff-grid { grid-template-columns: repeat(2, 1fr); }
-  .diff-grid > .diff-card:nth-child(1),
-  .diff-grid > .diff-card:nth-child(2) { grid-column: span 2; }
+  .diff-grid > .diff-card--featured { grid-column: span 2; }
 }
 @media (max-width: 620px) {
   .diff-grid { grid-template-columns: 1fr; }
@@ -1482,13 +1553,6 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
     <div class="diff-grid">
 
       <div class="diff-card diff-card--featured">
-        <div class="diff-card__icon">💰</div>
-        <div class="diff-card__title">Custo previsível, em reais, sem surpresa cambial</div>
-        <div class="diff-card__desc">Modelo de cobrança por usuários ativos (MAU) e por resultado entregue — uma fatura, uma moeda, sem créditos internos em dólar, sem tarifas por ação ou add-ons que inflam o TCO conforme a operação cresce.</div>
-        <span class="diff-card__tag">100% BRL</span>
-      </div>
-
-      <div class="diff-card diff-card--featured">
         <div class="diff-card__icon">🧠</div>
         <div class="diff-card__title">IA autônoma com governança, não uma caixa-preta</div>
         <div class="diff-card__desc">Agente de IA + Copilot + Studio operando com supervisão humana (human-in-the-loop), trilha de auditoria completa e guardrails de marca — autonomia que escala sem virar risco operacional ou regulatório.</div>
@@ -1499,12 +1563,6 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
         <div class="diff-card__icon">🛡️</div>
         <div class="diff-card__title">Segurança no nível mais alto do mercado</div>
         <div class="diff-card__desc">Classificação Advanced em rating de segurança (BitSight), certificação ISO 27001:2022 e conformidade LGPD/GDPR de ponta a ponta — não o nível "intermediário" comum entre plataformas globais genéricas.</div>
-      </div>
-
-      <div class="diff-card">
-        <div class="diff-card__icon">🇧🇷</div>
-        <div class="diff-card__title">DNA local, não um produto global adaptado</div>
-        <div class="diff-card__desc">Nascida no Brasil: domínio nativo do português falado, expertise regulatória em LGPD e suporte (CSM) no seu fuso horário — sem as lacunas de dialeto e burocracia de quem só "chegou" na América Latina.</div>
       </div>
 
       <div class="diff-card">
@@ -1527,7 +1585,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 
       <div class="diff-card">
         <div class="diff-card__icon">🤝</div>
-        <div class="diff-card__title">Suporte local de verdade, não self-service</div>
+        <div class="diff-card__title">Suporte diferenciado</div>
         <div class="diff-card__desc">CSM dedicado e time de suporte próximo, em vez de um modelo "faça você mesmo" ou um atendimento global genérico e mais lento para o Brasil — especialmente crítico em momentos de crise.</div>
       </div>
 
@@ -3132,8 +3190,8 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 </div>
 <div class="ma-agent-card__persona">Conhece o processo de admissão da Track&amp;Field do começo ao fim, documentação, primeiro dia e cultura. Acolhe com clareza e conduz cada etapa sem fricção.</div>
 <div class="ma-agent-card__flows">
-<div class="ma-flow"><span class="ma-flow__dot"></span>Boas-vindas e checklist do 1º dia</div>
-<div class="ma-flow"><span class="ma-flow__dot"></span>Cadastro de dependentes</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Dúvidas sobre processo admissional</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Boas-vindas e check-list do 1º dia</div>
 <div class="ma-flow"><span class="ma-flow__dot"></span>Ativação de benefícios</div>
 </div>
 </div>
@@ -3141,30 +3199,18 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 <div class="ma-agent-card__head">
 <div class="ma-icon ma-icon--agent"><span style="font-size:1.3rem;line-height:1;">👥</span></div>
 <div>
-<div class="ma-title">Agente Liderados</div>
-<div class="ma-subtitle">Colaboradores ativos</div>
+<div class="ma-title">Agente Liderados &amp; Líderes</div>
+<div class="ma-subtitle">Colaboradores ativos e gestores de equipe</div>
 </div>
 </div>
-<div class="ma-agent-card__persona">Domina as políticas internas, regras da CLT, benefícios ativos e procedimentos do dia a dia. Resolve o operacional do colaborador com agilidade e precisão.</div>
+<div class="ma-agent-card__persona">Resolve o operacional do colaborador com agilidade e, no mesmo fio, apoia o gestor com a visão consolidada do time — políticas internas, regras da CLT, jornada e benefícios, sempre no contexto de quem está perguntando.</div>
 <div class="ma-agent-card__flows">
-<div class="ma-flow"><span class="ma-flow__dot"></span>Ajuste de ponto</div>
-<div class="ma-flow"><span class="ma-flow__dot"></span>Solicitação de férias</div>
-<div class="ma-flow"><span class="ma-flow__dot"></span>Consulta de holerite</div>
-</div>
-</div>
-<div class="ma-agent-card">
-<div class="ma-agent-card__head">
-<div class="ma-icon ma-icon--agent"><span style="font-size:1.3rem;line-height:1;">✅</span></div>
-<div>
-<div class="ma-title">Agente Líderes</div>
-<div class="ma-subtitle">Gestores de equipe / loja</div>
-</div>
-</div>
-<div class="ma-agent-card__persona">Atua como assistente operacional do gestor, entende escala, aprovações pendentes e processos da liderança. Mostra a visão consolidada do time em segundos.</div>
-<div class="ma-agent-card__flows">
-<div class="ma-flow"><span class="ma-flow__dot"></span>Substituição temporária na loja</div>
-<div class="ma-flow"><span class="ma-flow__dot"></span>Aprovação de férias da equipe</div>
-<div class="ma-flow"><span class="ma-flow__dot"></span>Painel de chamados do time</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Dúvidas e ativação de benefícios</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Clareza sobre banco de horas e ajustes de ponto</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Esclarecimentos sobre holerite</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Acompanhamento de vagas</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Orientações sobre ponto, férias e outros temas da jornada do liderado</div>
+<div class="ma-flow"><span class="ma-flow__dot"></span>Substituição da liderança de loja no período de férias</div>
 </div>
 </div>
 <div class="ma-agent-card">
@@ -3229,7 +3275,8 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 <span class="ma-resource-card__tag ma-tag--kb">CLT &amp; Férias</span>
 <span class="ma-resource-card__tag ma-tag--kb">Holerite &amp; IR</span>
 <span class="ma-resource-card__tag ma-tag--kb">Políticas RH</span>
-<span class="ma-resource-card__tag ma-tag--kb">Departamento Pessoal</span>
+<span class="ma-resource-card__tag ma-tag--kb">Vagas</span>
+<span class="ma-resource-card__tag ma-tag--kb">Treinamento e Desenvolvimento</span>
 <span class="ma-resource-card__tag ma-tag--kb">Onboarding</span>
 </div>
 </div>
@@ -3250,7 +3297,8 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 </div>
 <div class="ma-resource-card__tags">
 <span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">🗄️</span> LG (folha &amp; ponto)</span>
-<span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">👥</span> Wellhub (benefícios)</span>
+<span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">👥</span> TotalPass (benefícios)</span>
+<span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">🏥</span> XIPP (corretora de saúde)</span>
 <span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">✉️</span> Gmail (deflection)</span>
 <span class="ma-resource-card__tag ma-tag--tools"><span style="font-size:12px;line-height:1;display:inline-flex;">🔒</span> AD/Entra ID</span>
 </div>
@@ -3264,7 +3312,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 <div class="ma-callout__icon" style="background:rgba(28,200,238,0.12);color:var(--blip-primary);"><span style="font-size:18px;line-height:1;display:inline-flex;">🔁</span></div>
 <div class="ma-callout__title">Contexto compartilhado entre agentes</div>
 </div>
-<div class="ma-callout__body">Pediu sobre férias e depois sobre holerite? O orquestrador entrega a conversa entre os especialistas sem perder o histórico.</div>
+<div class="ma-callout__body">Solicitou férias e quer acompanhar o status das vagas em aberto? O mesmo agente entende os dois papéis — colaborador e gestor — sem perder o contexto da conversa.</div>
 </div>
 <div class="ma-callout">
 <div class="ma-callout__header">
@@ -3278,7 +3326,7 @@ footer .footer-logos { margin-bottom: 1.5rem; display: flex; justify-content: ce
 <div class="ma-callout__icon" style="background:rgba(244,114,182,0.12);color:#F472B6;"><span style="font-size:18px;line-height:1;display:inline-flex;">🔒</span></div>
 <div class="ma-callout__title">Camadas de segurança escaláveis</div>
 </div>
-<div class="ma-callout__body">Para dados sensíveis (IRRF, salário): 2FA via SMS, WhatsApp ou e-mail corporativo, conforme criticidade do dado solicitado.</div>
+<div class="ma-callout__body">Para dados sensíveis (IRRF, salário): 2FA via e-mail pessoal, já que a maior parte do público não possui e-mail corporativo.</div>
 </div>
 <div class="ma-callout">
 <div class="ma-callout__header">
